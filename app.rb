@@ -15,7 +15,9 @@ enable :sessions
 
   get '/play' do
     @player1_name = session[:player1_name]
+    @player1_hp   = 100
     @player2_name = session[:player2_name]
+    @player2_hp   = 100
     erb :play
   end
 
