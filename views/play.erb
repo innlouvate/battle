@@ -4,4 +4,10 @@
   <h2>vs.</h2>
   <p>
   <h1><%= @player2_name %> [<%= @player2_hp %>hp]</h1>
+  <form action="/play" method="post">
+    <input type="submit" value="Attack!" />
+  </form>
+  <% if @confirmation %>
+    <h2><%= "#{@player1_name} attacked #{@player2_name}!" %></h2>
+  <% end %>
 </div>
