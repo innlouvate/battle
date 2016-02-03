@@ -1,1 +1,5 @@
-<h1><%= $Player1.name %> attacked <%= @player_2_name %> and they lost 10hp</h1>
+<h1><%= @player1_name %> attacked <%= @player2_name %> and they lost 10hp</h1>
+<!-- <a href='/play'>Play on...</a> -->
+<form action="/play">
+  <input type="submit" value="Play on..."/>
+</form>
