@@ -9,5 +9,6 @@ feature 'Enter names' do
     fill_in :player_2, with: 'Birthday'
     click_button 'Submit'
     expect(page).to have_content 'Heather vs. Birthday'
+    expect(page).to have_content'Heather: 60HP'
   end
 end
