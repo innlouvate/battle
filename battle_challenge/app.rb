@@ -13,7 +13,7 @@ enable :sessions
   post '/names' do
     session[:player_1] = params[:player_1]
     session[:player_2] = params[:player_2]
-    
+
     redirect '/play'
   end
 
@@ -22,6 +22,13 @@ enable :sessions
     @player_2 = session[:player_2]
     erb(:play)
   end
+
+  get '/fight' do
+    @player_1 = session[:player_1]
+    @player_2 = session[:player_2]
+    "You attacked #{@player_2}!"
+  end
+
 
       # # start the server if ruby file executed directly
       run! if app_file == $0

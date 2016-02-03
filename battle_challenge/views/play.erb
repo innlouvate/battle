@@ -3,4 +3,12 @@
 <h1 align="center"> <%=@player_2%> </h1>
 
 
-<h5 align="center"> <%=@player_1%>: 60HP <%=@player_2%>: 60HP </h5>
+<h3 align="center"> <%=@player_1%>: 60HP <%=@player_2%>: 60HP </h3>
+
+
+
+<!-- <p align="center"><button type="button">Attack <%=@player_2%>!</button></p> -->
+
+<form action="/fight" class="inline">
+    <button class="float-left submit-button" >Attack <%=@player_2%>!</button>
+</form>
