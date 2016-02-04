@@ -30,6 +30,7 @@ enable :sessions
   get '/fight' do
     @player_1 = $game.player_1.name
     @player_2 = $game.player_2.name
+    @turn = $game.turn.name
     @opponent = $game.opponent.name
     $game.attack($game.opponent)
     $game.switch_turn
