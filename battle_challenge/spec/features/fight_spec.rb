@@ -1,4 +1,4 @@
-feature 'Attack player' do
+feature 'Fighting player' do
 
   scenario 'player_1 is going to attack player_2.' do
     sign_in_and_play
