@@ -9,16 +9,25 @@ describe Game do
     it 'includes player1' do
       expect(game.player_1).to eq player_1
     end
-    it 'includes player1' do
+    it 'includes player2' do
       expect(game.player_2).to eq player_2
     end
+    it 'starts as player1s go' do
+      expect(game.turn).to eq player_1
+    end
   end
-
 
   describe '#attack' do
     it 'attacks the other player' do
       expect(player_2).to receive(:receive_damage)
       game.attack(player_2)
+    end
+  end
+
+  describe '#switch_turn' do
+    it 'changes turn from player1 to player2' do
+      game.switch_turn
+      expect(game.turn).to eq player_2
     end
   end
 

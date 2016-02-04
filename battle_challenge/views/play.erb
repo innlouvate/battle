@@ -8,7 +8,7 @@
 
 
 <!-- <p align="center"><button type="button">Attack <%=@player_2%>!</button></p> -->
-
-<form action="/fight" class="inline">
-    <button class="float-left submit-button" >Attack <%=@player_2%>!</button>
+<h2><%= @player_turn%>'s turn<h2>
+<form action="/fight">
+    <button>Attack!</button>
 </form>
