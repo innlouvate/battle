@@ -17,14 +17,6 @@ let(:opponent) {double :opponent}
     end
   end
 
-  describe '#attack' do
-    it 'attacks the other player' do
-      expect(opponent).to receive(:receive_damage)
-      player.attack(opponent)
-    end
-
-  end
-
   describe '#receive_damage' do
     it 'reduces HP by two' do
       expect{player.receive_damage}.to change{player.hp}.by -2
