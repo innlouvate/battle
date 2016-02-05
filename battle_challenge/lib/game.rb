@@ -29,4 +29,8 @@ class Game
     player_1 == turn ? player_2 : player_1
   end
 
+  def game_over?
+    player_1.hp == 0 || player_2.hp == 0
+  end
+
 end

@@ -1,7 +1,7 @@
 class Player
 
 attr_reader :name, :hp
-DEFAULT_HP = 60
+DEFAULT_HP = 4
 
   def initialize(name)
     @name = name
