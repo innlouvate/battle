@@ -29,9 +29,13 @@
     <% end %>
   <% end %>
 
-<% if @player_2 == "CPU" && @player_turn == "CPU" %>
-  <meta HTTP-EQUIV="REFRESH" content="3; url=/fight">
-<% end %>
+  <%if $game.cpu_turn == "attack"%>
+    <meta HTTP-EQUIV="REFRESH" content="2; url=/fight">
+  <% end %>
+  <%if $game.cpu_turn == "freeze" %>
+    <meta HTTP-EQUIV="REFRESH" content="2; url=/freeze">
+  <% end %>
+
 
 </body>
 </html>

@@ -15,6 +15,24 @@ feature 'Freezing player' do
     expect(page).to have_content 'Heather failed to freeze Birthday!'
   end
 
+  scenario 'player_2 freezes player_1' do
+    sign_in_and_play
+    allow(Kernel).to receive(:rand).and_return(0)
+    click_button 'Attack!'
+    click_button 'Play again!'
+    click_button 'Freeze!'
+    expect(page).to have_content 'Birthday froze Heather!'
+  end
+
+  scenario 'player_2 failed to freeze player_1' do
+    sign_in_and_play
+    allow(Kernel).to receive(:rand).and_return(1)
+    click_button 'Attack!'
+    click_button 'Play again!'
+    click_button 'Freeze!'
+    expect(page).to have_content 'Birthday failed to freeze Heather!'
+  end
+
   scenario 'successful freeze HPs reduced' do
     sign_in_and_play
     allow(Kernel).to receive(:rand).and_return(0)

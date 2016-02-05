@@ -7,7 +7,7 @@ class Game
   def initialize(player_1, player_2)
     @players = [player_1, player_2]
     @turn = player_2
-    @available_plays = [attack, freeze]
+    @available_plays = ["attack", "freeze"]
     #some initialize that p2 is cpu
   end
 
@@ -33,9 +33,9 @@ class Game
     end
   end
 
-  def cpu_turn(player)
+  def cpu_turn
     if @turn.computer
-      cpu_play(player)
+      @available_plays.sample
     end
   end
 
@@ -57,8 +57,8 @@ class Game
     Kernel.rand(10)
   end
 
-  def cpu_play(player)
-    self.send(available_plays.sample), player
-  end
+  # def cpu_play(player)
+  #   self.send(available_plays.sample), player
+  # end
 
 end
