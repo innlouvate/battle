@@ -12,8 +12,8 @@ describe Game do
     it 'includes player2' do
       expect(game.player_2).to eq player_2
     end
-    it 'starts as player1s go' do
-      expect(game.turn).to eq player_1
+    it 'starts as player_2 go' do
+      expect(game.turn).to eq player_2
     end
   end
 
@@ -27,7 +27,7 @@ describe Game do
   describe '#switch_turn' do
     it 'changes turn from player1 to player2' do
       game.switch_turn
-      expect(game.turn).to eq player_2
+      expect(game.turn).to eq player_1
     end
   end
 

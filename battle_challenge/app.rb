@@ -36,6 +36,7 @@ enable :sessions
   end
 
   get '/play' do
+    $game.switch_turn
     @player_1 = $game.player_1.name
     @player_2 = $game.player_2.name
     @player_turn = $game.turn.name
@@ -47,9 +48,17 @@ enable :sessions
   get '/fight' do
     @turn = $game.turn.name
     @opponent = $game.opponent.name
-    $game.attack($game.opponent)
-    $game.switch_turn
+    # $game.attack($game.opponent)
+    # $game.switch_turn
     erb(:fight)
+  end
+
+  get '/freeze' do
+    @turn = $game.turn.name
+    @opponent = $game.opponent.name
+    # $game.freeze($game.opponent)
+    # $game.switch_turn
+    erb(:freeze)
   end
 
 

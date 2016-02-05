@@ -23,7 +23,10 @@
       <form action="/fight">
         <input type='submit' value='Attack!'>
       </form>
-    <% end %>  
+      <form action="/freeze">
+        <input type='submit' value='Freeze!'>
+      </form>
+    <% end %>
   <% end %>
 
 <% if @player_2 == "CPU" && @player_turn == "CPU" %>

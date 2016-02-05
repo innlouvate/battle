@@ -6,7 +6,7 @@ class Game
 
   def initialize(player_1, player_2)
     @players = [player_1, player_2]
-    @turn = player_1
+    @turn = player_2
     #some initialize that p2 is cpu
   end
 
@@ -20,6 +20,9 @@ class Game
 
   def attack(player)
     player.receive_damage
+  end
+
+  def freeze(player)
   end
 
   def switch_turn
