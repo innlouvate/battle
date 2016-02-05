@@ -1,12 +1,23 @@
-<form action="/">
+<form action="/oneplayer">
     <input type='submit' value='1 player'>
+</form>
+
+<form action="/twoplayers">
     <input type='submit' value='2 players'>
 </form>
 
 
+<% if @players==1 %>
+  <form action="/names" method="post" >
+    <input type="text" name="player_1">
+    <input type="submit" value="Submit">
+  </form>
+<% end %>
 
-<form action="/names" method="post" >
-  <input type="text" name="player_1">
-  <input type="text" name="player_2">
-  <input type="submit" value="Submit">
-</form>
+<% if @players==2 %>
+  <form action="/names" method="post" >
+    <input type="text" name="player_1">
+    <input type="text" name="player_2">
+    <input type="submit" value="Submit">
+  </form>
+<% end %>

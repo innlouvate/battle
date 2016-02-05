@@ -6,7 +6,18 @@ class Battle < Sinatra::Base
 enable :sessions
 
   get '/' do
+    @players = session[:players]
     erb(:index)
+  end
+
+  get '/oneplayer' do
+    session[:players] = 1
+    redirect '/'
+  end
+
+  get '/twoplayers' do
+    session[:players] = 2
+    redirect '/'
   end
 
   post '/names' do
