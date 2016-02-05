@@ -1,24 +1,18 @@
 class Player
 
-attr_reader :name, :hp, :message
+attr_reader :name, :hp, :message, :computer
 DEFAULT_HP = 50
 
-  def initialize(name)
+  def initialize(name, computer = false)
     @name = name
     @hp = DEFAULT_HP
+    @computer = computer
   end
 
-  def receive_damage
-    n = random_num
-    return "The attack missed..." if n == 0
-    @hp -= n
-    "HP reduced by #{n}"
+  def receive_damage(random_num)
+    @hp -= random_num+1
+    "HP reduced by #{random_num+1}"
   end
 
-  private
-
-  def random_num
-    Kernel.rand(10)
-  end
 
 end

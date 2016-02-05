@@ -1,4 +1,4 @@
-<h1><%=@turn%> froze <%=@opponent%>!</h1>
+<h1><%="#{@turn} #{$game.freeze($game.opponent)} #{@opponent}!"%></h1>
 
 <form action="/play">
     <button>Play again!</button>

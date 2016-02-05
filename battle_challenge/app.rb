@@ -22,7 +22,7 @@ enable :sessions
 
   post '/names1' do
     @player_1 = Player.new(params[:player_1])
-    @player_2 = Player.new("CPU")
+    @player_2 = Player.new("CPU", true)
     $game = Game.new(@player_1, @player_2)
     redirect '/play'
   end
@@ -57,7 +57,6 @@ enable :sessions
     @turn = $game.turn.name
     @opponent = $game.opponent.name
     # $game.freeze($game.opponent)
-    # $game.switch_turn
     erb(:freeze)
   end
 

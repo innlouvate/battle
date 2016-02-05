@@ -21,8 +21,7 @@ let(:opponent) {double :opponent}
   describe '#receive_damage' do
     it 'reduces HP by random number up to 10' do
       random = rand(10)
-      allow(player).to receive(:random_num).and_return(random)
-      expect{player.receive_damage}.to change{player.hp}.by(-random)
+      expect{player.receive_damage(random)}.to change{player.hp}.by(-random-1)
     end
   end
 
