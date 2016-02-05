@@ -20,7 +20,15 @@ enable :sessions
     redirect '/'
   end
 
-  post '/names' do
+  post '/names1' do
+    @player_1 = Player.new(params[:player_1])
+    @player_2 = Player.new("CPU")
+    $game = Game.new(@player_1, @player_2)
+    redirect '/play'
+  end
+
+
+  post '/names2' do
     @player_1 = Player.new(params[:player_1])
     @player_2 = Player.new(params[:player_2])
     $game = Game.new(@player_1, @player_2)
@@ -37,8 +45,6 @@ enable :sessions
   end
 
   get '/fight' do
-    # @player_1 = $game.player_1.name
-    # @player_2 = $game.player_2.name
     @turn = $game.turn.name
     @opponent = $game.opponent.name
     $game.attack($game.opponent)

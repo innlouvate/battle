@@ -11,17 +11,24 @@
   <h1> <%=@player_2%> </h1>
 
   <% if @player1_points == 0 %>
-  <h2><%=@player_2%> wins!</h2>
+    <h2><%=@player_2%> wins!</h2>
   <% elsif @player2_points == 0 %>
-  <h2><%=@player_1%> wins!</h2>
+    <h2><%=@player_1%> wins!</h2>
   <% else %>
-  <h3> <%=@player_1%>: <%=@player1_points%>HP <%=@player_2%>: <%=@player2_points%>HP </h3>
-  <!-- <p align="center"><button type="button">Attack <%=@player_2%>!</button></p> -->
-  <h2><%= @player_turn%>'s turn<h2>
-  <form action="/fight">
-      <input type='submit' value='Attack!'>
-  </form>
+    <h3> <%=@player_1%>: <%=@player1_points%>HP <%=@player_2%>: <%=@player2_points%>HP </h3>
+    <!-- <p align="center"><button type="button">Attack <%=@player_2%>!</button></p> -->
+    <h2><%= @player_turn%>'s turn<h2>
+
+    <% unless @player_2 == "CPU" && @player_turn == "CPU" %>
+      <form action="/fight">
+        <input type='submit' value='Attack!'>
+      </form>
+    <% end %>  
   <% end %>
+
+<% if @player_2 == "CPU" && @player_turn == "CPU" %>
+  <meta HTTP-EQUIV="REFRESH" content="3; url=/fight">
+<% end %>
 
 </body>
 </html>
