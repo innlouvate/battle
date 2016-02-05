@@ -30,7 +30,7 @@ class Game
   end
 
   def game_over?
-    player_1.hp == 0 || player_2.hp == 0
+    player_1.hp <= 0 || player_2.hp <= 0
   end
 
 end

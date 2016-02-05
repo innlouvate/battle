@@ -2,10 +2,8 @@ require 'sinatra/base'
 require './lib/player'
 require './lib/game'
 
-
 class Battle < Sinatra::Base
 enable :sessions
-
 
   get '/' do
     erb(:index)
@@ -28,8 +26,8 @@ enable :sessions
   end
 
   get '/fight' do
-    @player_1 = $game.player_1.name
-    @player_2 = $game.player_2.name
+    # @player_1 = $game.player_1.name
+    # @player_2 = $game.player_2.name
     @turn = $game.turn.name
     @opponent = $game.opponent.name
     $game.attack($game.opponent)

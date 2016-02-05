@@ -9,6 +9,7 @@ let(:opponent) {double :opponent}
     it 'initiliazes with default HP' do
       expect(player.hp).to eq Player::DEFAULT_HP
     end
+
   end
 
   describe '#name' do
@@ -18,8 +19,10 @@ let(:opponent) {double :opponent}
   end
 
   describe '#receive_damage' do
-    it 'reduces HP by two' do
-      expect{player.receive_damage}.to change{player.hp}.by -2
+    it 'reduces HP by random number up to 10' do
+      random = rand(10)
+      allow(player).to receive(:random_num).and_return(random)
+      expect{player.receive_damage}.to change{player.hp}.by(-random)
     end
   end
 
