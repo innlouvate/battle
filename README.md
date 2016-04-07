@@ -10,17 +10,17 @@ Create a basis battle between two players / player and computer with an attack m
 
 ### Challenges
 
-Getting Started with Battle
-Entering Players
-POST/redirect/GET pattern
-Viewing hit points
-Test helpers
-Attacking Player 2
-Extracting logic to the model
-Implementing hit points
-Single Responsibility Principle, anyone?
-Skinny controllers
-Switching turns
-Multiplayer
-Losing and winning
-Killing the Global Variable
+* Getting Started with Battle
+* Entering Players
+* POST/redirect/GET pattern
+* Viewing hit points
+* Test helpers
+* Attacking Player 2
+* Extracting logic to the model
+* Implementing hit points
+* Single Responsibility Principle, anyone?
+* Skinny controllers
+* Switching turns
+* Multiplayer
+* Losing and winning
+* Killing the Global Variable
